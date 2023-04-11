@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "735278054618",
+    "project_id": "fastfeet-4b862",
+    "storage_bucket": "fastfeet-4b862.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735278054618:android:da869c56a42ee62e5579e3",
+        "android_client_info": {
+          "package_name": "fastfeet.pedrokirstein.com.br.fast_feet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735278054618-dqss7nv1c0ctv3ekuanb9c892rt1rcei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8b8-lmJzvN6DQY2NMCU20kQWeo3jm6Ic"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735278054618-dqss7nv1c0ctv3ekuanb9c892rt1rcei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
