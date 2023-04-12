@@ -1,8 +1,10 @@
 # fast_feet
 
 Aplicativo de entrega
+<br>
 Desenvolvido em Flutter
-Integração Firebase 
+<br>
+Integração Firebase <br>
 Flutter Bloc como gerenciamento de estado.
 
 
