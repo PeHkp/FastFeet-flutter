@@ -1,19 +1,19 @@
-class HomePageState {
+class MyDeliveryPageState {
   List? entregas = [];
-  HomePageState({
+  MyDeliveryPageState({
     this.entregas,
   });
 
-  HomePageState copyWith({
+  MyDeliveryPageState copyWith({
     List? entregas,
   }) {
-    return HomePageState(
+    return MyDeliveryPageState(
       entregas: entregas ?? this.entregas,
     );
   }
 }
 
-class ErrorState extends HomePageState {
+class ErrorState extends MyDeliveryPageState {
   final String? message;
 
   ErrorState({
@@ -24,8 +24,8 @@ class ErrorState extends HomePageState {
         );
 }
 
-class LoadingHomePageState extends HomePageState {
-  LoadingHomePageState({
+class LoadingMyDeliveryPageState extends MyDeliveryPageState {
+  LoadingMyDeliveryPageState({
     List? entregas,
   }) : super(
           entregas: entregas,

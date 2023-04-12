@@ -1,7 +1,7 @@
 import 'package:fast_feet/pages/login/bloc/login_event.dart';
 import 'package:fast_feet/pages/login/bloc/login_state.dart';
-import 'package:fast_feet/services/firebase/auth_response.dart';
-import 'package:fast_feet/services/firebase/auth_service.dart';
+import 'package:fast_feet/services/auth/auth_response.dart';
+import 'package:fast_feet/services/auth/auth_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {

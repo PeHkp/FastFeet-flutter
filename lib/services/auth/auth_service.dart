@@ -1,4 +1,4 @@
-import 'package:fast_feet/services/firebase/auth_response.dart';
+import 'package:fast_feet/services/auth/auth_response.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {

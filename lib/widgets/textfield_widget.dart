@@ -1,31 +1,47 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+enum TypesTextField { text, email, password }
 
 class TextFieldWidget extends StatelessWidget {
   final TextEditingController controller;
   final IconData icon;
   final String hint;
+  final TypesTextField type;
 
-  const TextFieldWidget({
-    Key? key,
-    required this.controller,
-    required this.icon,
-    required this.hint,
-  }) : super(key: key);
+  const TextFieldWidget(
+      {Key? key,
+      required this.controller,
+      required this.icon,
+      required this.hint,
+      required this.type})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       validator: (value) {
-        if (value!.isEmpty || value == "") {
-          return "O campo nome é obrigatorio!";
+        if (type == TypesTextField.text) {
+          if (value!.isEmpty || value == "") {
+            return "O campo nome é obrigatorio!";
+          }
         }
+        if (type == TypesTextField.email) {
+          if (!EmailValidator.validate(value!)) {
+            return "*E-mail inválido.\nTem certeza de que este é o seu E-mail?";
+          }
+        }
+
         return null;
       },
       autocorrect: false,
       controller: controller,
+      keyboardType: type == TypesTextField.email
+          ? TextInputType.emailAddress
+          : TextInputType.text,
       cursorColor: const Color(0xffBEBCCC),
+      obscureText: type == TypesTextField.password ? true : false,
       style: GoogleFonts.inter(
         textStyle: const TextStyle(
           fontSize: 16,

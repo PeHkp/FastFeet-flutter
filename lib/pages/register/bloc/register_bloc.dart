@@ -1,7 +1,7 @@
 import 'package:fast_feet/pages/register/bloc/register_event.dart';
 import 'package:fast_feet/pages/register/bloc/register_state.dart';
-import 'package:fast_feet/services/firebase/auth_response.dart';
-import 'package:fast_feet/services/firebase/auth_service.dart';
+import 'package:fast_feet/services/auth/auth_response.dart';
+import 'package:fast_feet/services/auth/auth_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {

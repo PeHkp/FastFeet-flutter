@@ -1,4 +1,4 @@
-import 'package:email_validator/email_validator.dart';
+import 'package:fast_feet/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -81,38 +81,11 @@ class ForgotPasswordPage extends StatelessWidget {
                     const SizedBox(
                       height: 30,
                     ),
-                    TextFormField(
-                      validator: (value) {
-                        if (!EmailValidator.validate(value!)) {
-                          return "*E-mail inválido.\nTem certeza de que este é o seu E-mail?";
-                        }
-                      },
+                    TextFieldWidget(
                       controller: _emailController,
-                      cursorColor: const Color(0xffBEBCCC),
-                      style: GoogleFonts.inter(
-                        textStyle: const TextStyle(
-                          fontSize: 16,
-                          color: Color(0xffBEBCCC),
-                        ),
-                      ),
-                      decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          focusColor: Colors.white,
-                          contentPadding: const EdgeInsets.all(20.0),
-                          hintText: "E-mail",
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Colors.white, width: 1),
-                              borderRadius: BorderRadius.circular(5)),
-                          border: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Colors.white, width: 1),
-                              borderRadius: BorderRadius.circular(5)),
-                          prefixIcon: const Icon(
-                            Icons.person,
-                            color: Color(0xffFFC042),
-                          )),
+                      hint: "E-mail",
+                      icon: Icons.mail,
+                      type: TypesTextField.email,
                     ),
                     const SizedBox(
                       height: 30,

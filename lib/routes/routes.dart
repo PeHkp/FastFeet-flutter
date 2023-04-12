@@ -1,8 +1,11 @@
 import 'package:fast_feet/pages/forgot_password/bloc/forgot_password_bloc.dart';
 import 'package:fast_feet/pages/forgot_password/forgot_password_page.dart';
+import 'package:fast_feet/pages/home/bloc/home_bloc.dart';
 import 'package:fast_feet/pages/home/home_page.dart';
 import 'package:fast_feet/pages/login/bloc/login_bloc.dart';
 import 'package:fast_feet/pages/login/login_page.dart';
+import 'package:fast_feet/pages/my_delivery/bloc/my_delivery_bloc.dart';
+import 'package:fast_feet/pages/my_delivery/my_delivery_page.dart';
 import 'package:fast_feet/pages/register/bloc/register_bloc.dart';
 import 'package:fast_feet/pages/register/register_page.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +18,7 @@ class Routes {
 
   static const String login = '/login';
   static const String home = '/home';
+  static const String myDelivery = '/my_delivery';
   static const String register = '/register';
   static const String forgotPassword = '/forgot_password';
 
@@ -31,6 +35,9 @@ class Routes {
           create: (_) => ForgotPasswordBloc(),
           child: ForgotPasswordPage(),
         ),
-    home: (context) => HomePage(),
+    home: (context) =>
+        BlocProvider(create: (_) => HomePageBloc(), child: const HomePage()),
+    myDelivery: (context) => BlocProvider(
+        create: (_) => MyDeliveryPageBloc(), child: const MyDeliveryPage()),
   };
 }

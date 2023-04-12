@@ -2,7 +2,7 @@ import 'package:fast_feet/pages/register/bloc/register_bloc.dart';
 import 'package:fast_feet/pages/register/bloc/register_event.dart';
 import 'package:fast_feet/pages/register/bloc/register_state.dart';
 import 'package:fast_feet/routes/routes.dart';
-import 'package:email_validator/email_validator.dart';
+import 'package:fast_feet/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -72,7 +72,7 @@ class RegisterPage extends StatelessWidget {
                     const SizedBox(
                       height: 80,
                     ),
-                    Text("Faça seu cadastro para\ncomeçar seus estudos.",
+                    Text("Faça seu cadastro para\ncomeçar suas entregas.",
                         style: GoogleFonts.inter(
                             textStyle: const TextStyle(
                                 fontWeight: FontWeight.w400,
@@ -81,114 +81,29 @@ class RegisterPage extends StatelessWidget {
                     const SizedBox(
                       height: 30,
                     ),
-                    TextFormField(
-                      validator: (value) {
-                        if (value!.isEmpty || value == "") {
-                          return "O campo nome é obrigatorio!";
-                        }
-                        return null;
-                      },
-                      autocorrect: false,
+                    TextFieldWidget(
                       controller: _nameController,
-                      cursorColor: const Color(0xffBEBCCC),
-                      style: GoogleFonts.inter(
-                        textStyle: const TextStyle(
-                          fontSize: 16,
-                          color: Color(0xffBEBCCC),
-                        ),
-                      ),
-                      decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          focusColor: Colors.white,
-                          contentPadding: const EdgeInsets.all(20.0),
-                          hintText: "Nome",
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Colors.white, width: 1),
-                              borderRadius: BorderRadius.circular(5)),
-                          border: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Colors.white, width: 1),
-                              borderRadius: BorderRadius.circular(5)),
-                          prefixIcon: const Icon(
-                            Icons.person,
-                            color: Color(0xffFFC042),
-                          )),
+                      hint: "Nome",
+                      icon: Icons.person,
+                      type: TypesTextField.text,
                     ),
                     const SizedBox(
                       height: 10,
                     ),
-                    TextFormField(
-                      validator: (value) {
-                        if (!EmailValidator.validate(value!)) {
-                          return "*E-mail inválido.\nTem certeza de que este é o seu E-mail?";
-                        }
-                        return null;
-                      },
-                      autocorrect: false,
+                    TextFieldWidget(
                       controller: _emailController,
-                      cursorColor: const Color(0xffBEBCCC),
-                      style: GoogleFonts.inter(
-                        textStyle: const TextStyle(
-                          fontSize: 16,
-                          color: Color(0xffBEBCCC),
-                        ),
-                      ),
-                      decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          focusColor: Colors.white,
-                          contentPadding: const EdgeInsets.all(20.0),
-                          hintText: "E-mail",
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Colors.white, width: 1),
-                              borderRadius: BorderRadius.circular(5)),
-                          border: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Colors.white, width: 1),
-                              borderRadius: BorderRadius.circular(5)),
-                          prefixIcon: const Icon(
-                            Icons.mail,
-                            color: Color(0xffFFC042),
-                          )),
+                      hint: "E-mail",
+                      icon: Icons.mail,
+                      type: TypesTextField.email,
                     ),
                     const SizedBox(
                       height: 10,
                     ),
-                    TextFormField(
-                      validator: (value) {
-                        if (value!.isEmpty || value == "") {
-                          return "O campo senha é obrigatorio!";
-                        }
-                      },
+                    TextFieldWidget(
                       controller: _passwordController,
-                      cursorColor: const Color(0xffBEBCCC),
-                      style: GoogleFonts.inter(
-                        textStyle: const TextStyle(
-                          fontSize: 16,
-                          color: Color(0xffBEBCCC),
-                        ),
-                      ),
-                      decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          focusColor: Colors.white,
-                          contentPadding: const EdgeInsets.all(20.0),
-                          hintText: "Senha",
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Colors.white, width: 1),
-                              borderRadius: BorderRadius.circular(5)),
-                          border: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Colors.white, width: 1),
-                              borderRadius: BorderRadius.circular(5)),
-                          prefixIcon: const Icon(
-                            Icons.lock,
-                            color: Color(0xffFFC042),
-                          )),
+                      hint: "Senha",
+                      icon: Icons.lock,
+                      type: TypesTextField.password,
                     ),
                     const SizedBox(
                       height: 26,

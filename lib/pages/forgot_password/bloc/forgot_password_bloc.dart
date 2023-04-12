@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fast_feet/pages/forgot_password/bloc/forgot_password_event.dart';
 import 'package:fast_feet/pages/forgot_password/bloc/forgot_password_state.dart';
-import 'package:fast_feet/services/firebase/auth_response.dart';
-import 'package:fast_feet/services/firebase/auth_service.dart';
+import 'package:fast_feet/services/auth/auth_response.dart';
+import 'package:fast_feet/services/auth/auth_service.dart';
 
 class ForgotPasswordBloc
     extends Bloc<ForgotPasswordEvent, ForgotPasswordState> {
